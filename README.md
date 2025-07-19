@@ -1,69 +1,44 @@
-# React + TypeScript + Vite
+# React TypeScript To-Do App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive To-Do list built using **React**, **TypeScript**, and **CSS**.
 
-Currently, two official plugins are available:
+Users can:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ✅ Add New Tasks
+- Type in the input field and click the **"Add Todo"** button to create a task.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+<img src="./src/assets/Add_Task.png" alt="Task Added" width="400"/>
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🗑️ Delete Tasks
+- Click the **DELETE** icon to remove a task from the list.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+<img src="./src/assets/Delete_Task.png" alt="Task Deleted" width="400"/>
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ✏️ Edit Existing Tasks
+- Click the **Edit** icon to make a task editable.
+- The button turns into **Save**, allowing you to store changes.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+<img src="./src/assets/Edit_Task.png" alt="Task Edited" width="400"/>
+
+---
+
+## 🔁 Tasks Persist on Refresh
+- Tasks remain saved even after refreshing or reopening the page using **localStorage**.
+
+---
+
+## ▶️ How to Run the App
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/meronsisay/react_todo_app.git
+cd react_todo_app
+npm install
+npm run dev
